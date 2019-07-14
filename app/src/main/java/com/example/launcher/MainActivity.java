@@ -1,4 +1,4 @@
-package com.example.mylauncher;
+package com.example.launcher;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -22,7 +22,7 @@ public class MainActivity extends Activity implements MyAppsAdapter.MyAppsAdapte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+         setContentView(R.layout.activity_main);
         initView();
         getApps();
         setData();
@@ -52,8 +52,10 @@ public class MainActivity extends Activity implements MyAppsAdapter.MyAppsAdapte
     public void OnClickListener(int i) {
         ResolveInfo resolveInfo = mMApps.get(i);
         String packageName = resolveInfo.activityInfo.packageName;
-        String appName = resolveInfo.activityInfo.name;
-        ComponentName componentName = new ComponentName(packageName, appName);
+        String name = resolveInfo.activityInfo.name;
+        LogUtils.e("packageName: "+packageName);
+        LogUtils.e("name: "+name);
+        ComponentName componentName = new ComponentName(packageName, name);
         Intent intent = new Intent();
         intent.setComponent(componentName);
         startActivity(intent);

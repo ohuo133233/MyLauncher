@@ -1,4 +1,4 @@
-package com.example.mylauncher;
+package com.example.launcher;
 
 
 import java.util.List;
@@ -19,7 +19,7 @@ class MyAppsAdapter extends RecyclerView.Adapter<MyAppsAdapter.ViewHolder> {
     private final Context mContext;
     private final List<ResolveInfo> mMApps;
 
-    public MyAppsAdapter(MainActivity context, List<ResolveInfo> mApps) {
+    public MyAppsAdapter(com.example.launcher.MainActivity context, List<ResolveInfo> mApps) {
         mContext = context;
         mMApps = mApps;
     }
