@@ -1,0 +1,2 @@
+# MyLauncher
+一个可以查找手机上所有APP.本身是个Launcher，只需把manifests的注释解开
