@@ -11,13 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity"
-            android:theme="@style/MyLauncher">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/MyLauncher"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <!--  解开注释就是launcher   -->
-                <!--   <category android:name="android.intent.category.HOME"/>-->
-                <!--   <category android:name="android.intent.category.DEFAULT"/>-->
+
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

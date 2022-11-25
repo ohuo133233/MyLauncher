@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 
+
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,7 +16,7 @@ import java.util.List;
 
 public class MainActivity extends Activity implements MyAppsAdapter.MyAppsAdapterSetOnClickListener {
     private String TAG = "MainActivity";
-    private RecyclerView rl;
+    private RecyclerView mRecyclerView;
     private MyAppsAdapter mMyAppsAdapter;
     private List<ResolveInfo> mMApps;
 
@@ -32,8 +33,8 @@ public class MainActivity extends Activity implements MyAppsAdapter.MyAppsAdapte
         if (mMyAppsAdapter == null) {
             mMyAppsAdapter = new MyAppsAdapter(this, mMApps);
         }
-        rl.setLayoutManager(new GridLayoutManager(this, 4));
-        rl.setAdapter(mMyAppsAdapter);
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 4));
+        mRecyclerView.setAdapter(mMyAppsAdapter);
         mMyAppsAdapter.setMyAppsAdapterSetOnClickListener(this);
     }
 
@@ -45,7 +46,7 @@ public class MainActivity extends Activity implements MyAppsAdapter.MyAppsAdapte
     }
 
     private void initView() {
-        rl = findViewById(R.id.rl);
+        mRecyclerView = findViewById(R.id.rl);
     }
 
     @Override
